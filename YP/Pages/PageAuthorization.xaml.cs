@@ -13,18 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace YP
+namespace YP.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для PageAuthorization.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class PageAuthorization : Page
     {
-        public MainWindow()
+        public PageAuthorization()
         {
             InitializeComponent();
-            Classes.ClassFrame.frame = frame;
-            Classes.ClassFrame.frame.Navigate(new Pages.PageAuthorization());
         }
     }
 }

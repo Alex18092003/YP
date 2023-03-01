@@ -6,9 +6,50 @@
       xmlns:local="clr-namespace:YP.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="PageAuthorization">
+      Title="Авторизация">
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="51*"/>
+            <ColumnDefinition Width="49*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*">
+            </RowDefinition>
+            <RowDefinition  Height="2*">
+            </RowDefinition>
+            <RowDefinition Height="1*">
+            </RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Grid.ColumnSpan="2">
+            <TextBlock Margin="40,40,0,0" FontSize="30">
+                Телеком Нева Связь
+            </TextBlock>
+
+            <Image Source="\Resources\Лого ТНС.jpg"  ></Image>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="255,57">
+            <StackPanel  Orientation="Horizontal" >
+                <TextBlock Margin="0,5,28,5">Номер</TextBlock>
+                <TextBox Width="200" Height="25" ></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock  Margin="0,5,20,5">Пароль</TextBlock>
+                <TextBox Width="200" Height="25"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock  Margin="0,5,55,5">Код</TextBlock>
+                <TextBox Height="25" Width="150"></TextBox>
+                <Image Height="20" Margin="20,0,0,0" Width="28" Source="\Resources\На авторизацию_Обновление кода.jpg"></Image>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Center" Grid.Row="2" Orientation="Horizontal" Grid.ColumnSpan="2">
+            <Button Margin="0,0,50,0"> Отмена </Button>
+            <Button> Вход </Button>
+        </StackPanel>
+
     </Grid>
 </Page>

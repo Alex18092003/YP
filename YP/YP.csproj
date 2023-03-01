@@ -105,5 +105,14 @@
   <ItemGroup>
     <Folder Include="Windows\" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\image.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Лого ТНС.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\На авторизацию_Обновление кода.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

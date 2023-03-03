@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Controls;
 using YP;
 
 namespace Classes
 {
-     class ClassFrame
+    class ClassBase
     {
-        public static Frame frame;
+        public static Entities entities;
     }
 }

@@ -30,22 +30,22 @@
         <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" >
             <StackPanel  Orientation="Horizontal" >
                 <TextBlock Margin="0,5,28,5">Номер</TextBlock>
-                <TextBox Width="200" Height="25" ></TextBox>
+                <TextBox KeyDown="textboxNomer_KeyDown" Name="textboxNomer" Width="200" Height="25" ></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock  Margin="0,5,20,5">Пароль</TextBlock>
-                <TextBox Width="200" Height="25"></TextBox>
+                <TextBox Name="textboxPassword"  IsEnabled="False" Width="200" Height="25"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock  Margin="0,5,55,5">Код</TextBlock>
-                <TextBox Height="25" Width="150"></TextBox>
+                <TextBox Name="textboxKod"  IsEnabled="False" Height="25" Width="150"></TextBox>
                 <Image Height="20" Margin="20,0,0,0" Width="28" Source="\Resources\На авторизацию_Обновление кода.jpg"></Image>
             </StackPanel>
         </StackPanel>
 
         <StackPanel HorizontalAlignment="Center" Grid.Row="2" Orientation="Horizontal" >
-            <Button Margin="0,0,50,0"> Отмена </Button>
-            <Button> Вход </Button>
+            <Button Name="burronCancel" Margin="0,0,50,0"> Отмена </Button>
+            <Button Name="burronEntrance" IsEnabled="False"> Вход </Button>
         </StackPanel>
 
     </Grid>

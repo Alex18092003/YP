@@ -24,5 +24,26 @@ namespace YP.Pages
         {
             InitializeComponent();
         }
+
+        private void textboxNomer_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                int nom = Convert.ToInt32(textboxNomer.Text);
+                Employees employees = Classes.ClassBase.entities.Employees.FirstOrDefault(x => x.nomer == nom);
+                
+                if(employees != null)
+                {
+                    textboxPassword.IsEnabled = true;
+                    textboxPassword.CaretIndex = textboxPassword.Text.Length;
+                }
+                else
+                {
+                    MessageBox.Show("csc", "Сообщение");
+                }
+               
+            }
+
+        }
     }
 }

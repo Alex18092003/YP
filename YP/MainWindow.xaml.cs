@@ -23,8 +23,11 @@ namespace YP
         public MainWindow()
         {
             InitializeComponent();
+            Classes.ClassBase.entities = new Entities();
             Classes.ClassFrame.frame = frame;
             Classes.ClassFrame.frame.Navigate(new Pages.PageAuthorization());
+
+           
         }
     }
 }

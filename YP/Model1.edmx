@@ -15,7 +15,7 @@
           <Property Name="patrinymic" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="id_role" Type="int" Nullable="false" />
           <Property Name="nomer" Type="int" Nullable="false" />
-          <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Roles">
           <Key>
@@ -78,7 +78,7 @@
           <Property Name="patrinymic" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="id_role" Type="Int32" Nullable="false" />
           <Property Name="nomer" Type="Int32" Nullable="false" />
-          <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Roles" Relationship="CRM12Model.FK_Employees_Roles" FromRole="Employees" ToRole="Roles" />
         </EntityType>
         <EntityType Name="Roles">

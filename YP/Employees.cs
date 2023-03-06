@@ -20,7 +20,7 @@ namespace YP
         public string patrinymic { get; set; }
         public int id_role { get; set; }
         public int nomer { get; set; }
-        public string password { get; set; }
+        public int password { get; set; }
     
         public virtual Roles Roles { get; set; }
     }

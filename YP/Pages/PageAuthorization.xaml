@@ -34,7 +34,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock  Margin="0,5,20,5">Пароль</TextBlock>
-                <TextBox Name="textboxPassword"  IsEnabled="False" Width="200" Height="25"></TextBox>
+                <TextBox KeyDown="textboxPassword_KeyDown" Name="textboxPassword"  IsEnabled="False" Width="200" Height="25"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock  Margin="0,5,55,5">Код</TextBlock>

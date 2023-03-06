@@ -35,13 +35,36 @@ namespace YP.Pages
                 if(employees != null)
                 {
                     textboxPassword.IsEnabled = true;
-                    textboxPassword.CaretIndex = textboxPassword.Text.Length;
+                    textboxPassword.Focus();
                 }
                 else
                 {
-                    MessageBox.Show("csc", "Сообщение");
+                    MessageBox.Show("Данного сотрудника нет в базе", "Сообщение");
                 }
                
+            }
+
+        }
+
+        private void textboxPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Enter)
+            {
+                int p = textboxPassword.Text.GetHashCode();
+                MessageBox.Show($"{p}", "Сообщение"); 
+                Employees employees = Classes.ClassBase.entities.Employees.FirstOrDefault(x => x.password == p);
+
+                if(employees == null)
+                {
+                    Windows.WindowKpd windowKpd = new Windows.WindowKpd();
+                    windowKpd.ShowDialog();
+                    Classes.ClassFrame.frame.Navigate(new PageAuthorization());
+                    textboxKod.IsEnabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("Введен неверный пароль", "Сообщение");
+                }
             }
 
         }

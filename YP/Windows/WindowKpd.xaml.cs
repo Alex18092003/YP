@@ -19,11 +19,11 @@ namespace YP.Windows
     /// </summary>
     public partial class WindowKpd : Window
     {
-        string text = String.Empty;
+        public string text = String.Empty;
+
         public WindowKpd()
         {
-            InitializeComponent();
-            //[ !#$%&'()*+,-/:;<=>?^_]
+            InitializeComponent();  
             Random rnd = new Random();
             for (int i = 0; i < 15; i++)
             {
@@ -58,46 +58,43 @@ namespace YP.Windows
                 if (v == 0)
                 {
                     int font = rnd.Next(16, 25);
-                    // h = rnd.Next((int)canv.Height - 70);
-                    // w = rnd.Next((int)canv.Width - 70);
+                    
                     TextBlock textBlock = new TextBlock()
                     {
                         Text = text[i].ToString(),
                         FontSize = font,
                         FontStyle = FontStyles.Italic,
-                        Margin = new Thickness(i * 25, rnd.Next(50), rnd.Next(50), 0),
-                        //Padding = new Thickness(i * 20, rnd.Next(70), rnd.Next(150), 0),
+                        Margin = new Thickness(i * 30, rnd.Next(50), rnd.Next(50), 0),
+                       
                     };
                     canv.Children.Add(textBlock);
                 }
                 else if (v == 1)
                 {
-                    int font = rnd.Next(16, 30);
-                    //h = rnd.Next((int)canv.Height - 10);
-                    //w = rnd.Next((int)canv.Width - 10);
+                    int font = rnd.Next(16, 25);
+                   
                     TextBlock textBlock = new TextBlock()
                     {
                         Text = text[i].ToString(),
                         FontSize = font,
-                        FontWeight = FontWeights.Bold,
-                        Margin = new Thickness(i * 25, rnd.Next(50), rnd.Next(50), 0),
-                        //Padding = new Thickness(i * 20, rnd.Next(70), rnd.Next(150), 0),
+                     
+                        Margin = new Thickness(i * 30, rnd.Next(50), rnd.Next(50), 0),
+                      
                     };
                     canv.Children.Add(textBlock);
                 }
                 else if (v == 2)
                 {
-                    int font = rnd.Next(16, 30);
-                    // h = rnd.Next((int)canv.Height - 10);
-                    //w = rnd.Next((int)canv.Width - 10);
+                    int font = rnd.Next(16, 25);
+                   
                     TextBlock textBlock = new TextBlock()
                     {
                         Text = text[i].ToString(),
                         FontSize = font,
                         FontWeight = FontWeights.Bold,
                         FontStyle = FontStyles.Italic,
-                        Margin = new Thickness(i*25, rnd.Next(50), rnd.Next(50), 0),
-                        //Padding = new Thickness(i * 20, rnd.Next(70), rnd.Next(150), 0),
+                        Margin = new Thickness(i*30, rnd.Next(50), rnd.Next(50), 0),
+                       
                     };
                     canv.Children.Add(textBlock);
                 }
@@ -108,7 +105,8 @@ namespace YP.Windows
 
         private void buttonCaptcha_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            MessageBox.Show($"{text}", "Сообщение");
+            this.Close();
         }
     }
 }

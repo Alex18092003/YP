@@ -34,17 +34,23 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock  Margin="0,5,20,5">Пароль</TextBlock>
-                <TextBox KeyDown="textboxPassword_KeyDown" Name="textboxPassword"  IsEnabled="False" Width="200" Height="25"></TextBox>
+                <PasswordBox KeyDown="textboxPassword_KeyDown" Name="textboxPassword"  IsEnabled="False" Width="200" Height="25"></PasswordBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock  Margin="0,5,55,5">Код</TextBlock>
-                <TextBox Name="textboxKod"  IsEnabled="False" Height="25" Width="150"></TextBox>
-                <Image Height="20" Margin="20,0,0,0" Width="28" Source="\Resources\На авторизацию_Обновление кода.jpg"></Image>
+                <TextBox KeyDown="textboxKod_KeyDown"  Name="textboxKod"  IsEnabled="False" Height="25" Width="150"></TextBox>
+
+                <Button Margin="10,0,0,0" Name="btnRepeat" Width="25"  Height="22" Click="btnRepeat_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="\Resources\На авторизацию_Обновление кода.jpg"/>
+                    </Button.Background>
+                </Button>
             </StackPanel>
         </StackPanel>
 
         <StackPanel HorizontalAlignment="Center" Grid.Row="2" Orientation="Horizontal" >
-            <Button Name="burronCancel" Margin="0,0,50,0"> Отмена </Button>
+            <TextBlock Name="tg"></TextBlock>
+            <Button Click="buttonCancel_Click" Name="buttonCancel" Margin="0,0,50,0"> Отмена </Button>
             <Button Name="burronEntrance" IsEnabled="False"> Вход </Button>
         </StackPanel>
 

@@ -27,7 +27,13 @@ namespace YP.Pages
         public int kk2 = 0;
         private int timer = 10;
         public int kk;
+        public int v;
+        public int v2;
         DispatcherTimer dispatcherTimer = new DispatcherTimer();
+        Windows.WindowKpd windowKpd = new Windows.WindowKpd();
+        string kod;
+        string kod1;
+        bool ss = false;
 
         public PageAuthorization()
         {
@@ -36,7 +42,7 @@ namespace YP.Pages
         }
         
 
-        public PageAuthorization(int kk)
+        public PageAuthorization(int kk, string kod)
         {
             InitializeComponent();
             if (kk != 0)
@@ -51,9 +57,33 @@ namespace YP.Pages
                 dispatcherTimer.Tick += new EventHandler(Back);
                 dispatcherTimer.Start();
                 kk2 = kk;
+                kod1 = kod;
+                v2 = v;
             }
         }
-        
+
+        public PageAuthorization(int kk, string kod, int v)
+        {
+            InitializeComponent();
+            if (kk != 0)
+            {
+                textboxKod.IsEnabled = true;
+                textboxPassword.IsEnabled = false;
+                textboxNomer.IsEnabled = false;
+
+                textboxKod.Focus();
+
+                dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
+                dispatcherTimer.Tick += new EventHandler(Back);
+                dispatcherTimer.Start();
+                kk2 = kk;
+                kod1 = kod;
+                v2 = v;
+                v2++;
+            }
+        }
+
+
         private void textboxNomer_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
@@ -76,6 +106,8 @@ namespace YP.Pages
 
         }
 
+       
+
         private void textboxPassword_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.Key == Key.Enter)
@@ -85,10 +117,12 @@ namespace YP.Pages
                 Employees employees = Classes.ClassBase.entities.Employees.FirstOrDefault(x => x.password == p);
                 if(employees != null)
                 {
-                    Windows.WindowKpd windowKpd = new Windows.WindowKpd();
+                   
                     windowKpd.ShowDialog();
                     kk = employees.id_role;
-                    Classes.ClassFrame.frame.Navigate(new PageAuthorization(kk));
+                    kod = windowKpd.text;
+
+                    Classes.ClassFrame.frame.Navigate(new PageAuthorization(kk, kod));
                     dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
                     dispatcherTimer.Tick += new EventHandler(Back);
                     dispatcherTimer.Start();
@@ -111,13 +145,15 @@ namespace YP.Pages
                 textboxKod.IsEnabled = false;
                 textboxPassword.IsEnabled = false;
                 textboxNomer.IsEnabled = false;
-               
-                    btnRepeat.IsEnabled = true;
+                textboxKod.Text = "";
+                btnRepeat.IsEnabled = true;
+                burronEntrance.IsEnabled = false;
                 
             } 
             else
             {
                 TextClue.Text = "Таймер: " + timer;
+                burronEntrance.IsEnabled = true;
             }
             timer--;
         }
@@ -127,25 +163,27 @@ namespace YP.Pages
             if (e.Key == Key.Enter)
             {
                 Roles roles = Classes.ClassBase.entities.Roles.FirstOrDefault(x => x.id_role == kk2);
-                Windows.WindowKpd windowKpd = new Windows.WindowKpd();
-                MessageBox.Show($"{kk2}", "Сообщение");
-                if (textboxKod.Text == windowKpd.text)
+                //MessageBox.Show($"{kod1}", "Сообщение");
+                if (textboxKod.Text == kod1)
                 {
-                    
                     MessageBox.Show($"Поздравляю вы авторизировались!\nВаша роль {roles.role}", "Сообщение");
                     textboxKod.IsEnabled = false;
                     textboxPassword.IsEnabled = false;
                     textboxNomer.IsEnabled = false;
+                    btnRepeat.IsEnabled = false;
+                    buttonCancel.IsEnabled = false;
+                    burronEntrance.IsEnabled = false;
                     dispatcherTimer.Stop();
                     TextClue.Text = "";
+                    textboxKod.Text = "";
                 }
                 else
                 {
                     textboxPassword.IsEnabled = false;
                     textboxNomer.IsEnabled = false;
+                    burronEntrance.IsEnabled = false;
                     MessageBox.Show("Неверный код", "Сообщение");
                 }
-                // pF0Jbd$@
             }
         }
     
@@ -158,24 +196,57 @@ namespace YP.Pages
             textboxPassword.IsEnabled = false;
             textboxNomer.IsEnabled = true;
             dispatcherTimer.Stop();
-            btnRepeat.IsEnabled = false;
             TextClue.Text = "";
         }
-        public int v;
+
+        
         private void btnRepeat_Click(object sender, RoutedEventArgs e)
         {
             
-            Windows.WindowKpd windowKpd = new Windows.WindowKpd();
+            
+            if (v2 != 1)
+            {
+                Windows.WindowKpd windowKpd = new Windows.WindowKpd();
             windowKpd.ShowDialog();
-            v = 1;
-            //kk = employees.id_role;
-            Classes.ClassFrame.frame.Navigate(new PageAuthorization(kk2));
+            v = windowKpd.v;
+                //kk = employees.id_role;
+                kod = windowKpd.text;
+                Classes.ClassFrame.frame.Navigate(new PageAuthorization(kk2, kod, v2));
           
             dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
             dispatcherTimer.Tick += new EventHandler(Back);
             dispatcherTimer.Start();
-            
+            }
+            else
+            {
+                MessageBox.Show("Закончились попытки", "Сообщение");
+                textboxKod.IsEnabled = false;
+                btnRepeat.IsEnabled = false;
+                buttonCancel.IsEnabled = false;
+                burronEntrance.IsEnabled = false;
+            }
+        }
+
+
+        private void burronEntrance_Click(object sender, RoutedEventArgs e)
+        {
+            Roles roles = Classes.ClassBase.entities.Roles.FirstOrDefault(x => x.id_role == kk2);
+            if (textboxKod.Text == kod1)
+            {
+                MessageBox.Show($"Поздравляю вы авторизировались!\nВаша роль {roles.role}", "Сообщение");
+                textboxKod.IsEnabled = false;
+                textboxPassword.IsEnabled = false;
+                textboxNomer.IsEnabled = false;
+                dispatcherTimer.Stop();
+                TextClue.Text = "";
+                textboxKod.Text = "";
+            }
+            else
+            {
+                textboxPassword.IsEnabled = false;
+                textboxNomer.IsEnabled = false;
+                MessageBox.Show("Неверный код", "Сообщение");
+            }
         }
     } 
 }
-

@@ -20,6 +20,7 @@ namespace YP.Windows
     public partial class WindowKpd : Window
     {
         public string text = String.Empty;
+        public int v =0;
 
         public WindowKpd()
         {
@@ -47,8 +48,6 @@ namespace YP.Windows
                 text += chars[rnd.Next(chars.Length)];
 
             }
-
-
 
             for (int i = 0; i < text.Length; i++)
             {
@@ -104,6 +103,7 @@ namespace YP.Windows
 
         private void buttonCaptcha_Click(object sender, RoutedEventArgs e)
         {
+            v = 1;
             MessageBox.Show($"{text}", "Сообщение");
             this.Close();
         }

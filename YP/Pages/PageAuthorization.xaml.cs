@@ -16,6 +16,9 @@ using System.Windows.Threading;
 
 namespace YP.Pages
 {
+    //код 123
+    //пароль 12345678
+
     /// <summary>
     /// Логика взаимодействия для PageAuthorization.xaml
     /// </summary>
@@ -25,7 +28,7 @@ namespace YP.Pages
         private int timer = 10;
         public int kk;
         DispatcherTimer dispatcherTimer = new DispatcherTimer();
-       
+
         public PageAuthorization()
         {
             InitializeComponent();
@@ -104,18 +107,17 @@ namespace YP.Pages
             if (timer == -1)
             {
                 dispatcherTimer.Stop();
-                tg.Text = "Вы не успели ввести код\nДля повторной отправки кода нажмите кнопку" ;
+                TextClue.Text = "Вы не успели ввести код\nДля повторной отправки кода нажмите кнопку";
                 textboxKod.IsEnabled = false;
                 textboxPassword.IsEnabled = false;
                 textboxNomer.IsEnabled = false;
-                if(v == 1)
-                {
-                    btnRepeat.IsEnabled = false;
-                }
+               
+                    btnRepeat.IsEnabled = true;
+                
             } 
             else
             {
-                tg.Text = "П " + timer + "gvd";
+                TextClue.Text = "Таймер: " + timer;
             }
             timer--;
         }
@@ -126,7 +128,7 @@ namespace YP.Pages
             {
                 Roles roles = Classes.ClassBase.entities.Roles.FirstOrDefault(x => x.id_role == kk2);
                 Windows.WindowKpd windowKpd = new Windows.WindowKpd();
-                //MessageBox.Show($"{kk2}", "Сообщение");
+                MessageBox.Show($"{kk2}", "Сообщение");
                 if (textboxKod.Text == windowKpd.text)
                 {
                     
@@ -135,8 +137,7 @@ namespace YP.Pages
                     textboxPassword.IsEnabled = false;
                     textboxNomer.IsEnabled = false;
                     dispatcherTimer.Stop();
-                    tg.Text = "";
-                    
+                    TextClue.Text = "";
                 }
                 else
                 {
@@ -144,7 +145,7 @@ namespace YP.Pages
                     textboxNomer.IsEnabled = false;
                     MessageBox.Show("Неверный код", "Сообщение");
                 }
-
+                // pF0Jbd$@
             }
         }
     
@@ -158,7 +159,7 @@ namespace YP.Pages
             textboxNomer.IsEnabled = true;
             dispatcherTimer.Stop();
             btnRepeat.IsEnabled = false;
-            tg.Text = "";
+            TextClue.Text = "";
         }
         public int v;
         private void btnRepeat_Click(object sender, RoutedEventArgs e)

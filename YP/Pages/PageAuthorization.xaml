@@ -24,7 +24,7 @@
                 Телеком Нева Связь
             </TextBlock>
 
-            <Image Source="\Resources\Лого ТНС.jpg" Grid.Row="0" HorizontalAlignment="Right"></Image>
+            <Image Source="../Resources/Лого ТНС.jpg" Grid.Row="0" HorizontalAlignment="Right"></Image>
         
 
         <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" >
@@ -40,18 +40,23 @@
                 <TextBlock  Margin="0,5,55,5">Код</TextBlock>
                 <TextBox KeyDown="textboxKod_KeyDown"  Name="textboxKod"  IsEnabled="False" Height="25" Width="150"></TextBox>
 
-                <Button Margin="10,0,0,0" Name="btnRepeat" Width="25"  Height="22" Click="btnRepeat_Click">
+                <Button Margin="10,0,0,0"  Name="btnRepeat" Width="25"  Height="22" Click="btnRepeat_Click">
                     <Button.Background>
-                        <ImageBrush ImageSource="\Resources\На авторизацию_Обновление кода.jpg"/>
+                        <ImageBrush  ImageSource="../Resources/На авторизацию_Обновление кода.jpg"/>
                     </Button.Background>
                 </Button>
             </StackPanel>
         </StackPanel>
 
-        <StackPanel HorizontalAlignment="Center" Grid.Row="2" Orientation="Horizontal" >
-            <TextBlock Name="tg"></TextBlock>
-            <Button Click="buttonCancel_Click" Name="buttonCancel" Margin="0,0,50,0"> Отмена </Button>
+        <StackPanel Orientation="Vertical" Grid.Row="2">     
+                <TextBlock Name="TextClue"></TextBlock>
+
+            <StackPanel HorizontalAlignment="Center"  Orientation="Horizontal" >
+
+
+                <Button Click="buttonCancel_Click" Name="buttonCancel" Margin="0,0,50,0"> Отмена </Button>
             <Button Name="burronEntrance" IsEnabled="False"> Вход </Button>
+            </StackPanel>
         </StackPanel>
 
     </Grid>

@@ -49,8 +49,7 @@ namespace YP.Windows
             }
 
 
-            int h;
-            int w;
+
             for (int i = 0; i < text.Length; i++)
             {
                 int margin = 40;

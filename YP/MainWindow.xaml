@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:YP"
         mc:Ignorable="d"
-        Title="Авторизация" Height="470" Width="700"
+        
+        Title="Авторизация" Height="470" MaxHeight="470" MaxWidth="700" WindowStartupLocation="CenterScreen" Width="700"
         Icon="\Resources\image.ico">
     <Grid>
         <Frame Name="frame" NavigationUIVisibility="Hidden"></Frame>

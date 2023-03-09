@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:YP.Windows"
         mc:Ignorable="d"
-        Title="Код" Height="230" Width="350">
+        Title="Код" Height="230" Width="350" MaxHeight="230" MaxWidth="350" WindowStartupLocation="CenterScreen">
     <Grid>
         <StackPanel HorizontalAlignment="Center">
             <TextBlock HorizontalAlignment="Center">Запомните код</TextBlock>
-            <Canvas Background="Azure"  Name="canv" Width="270" Height="100">
+            <Canvas Background="Azure" Name="canv" Width="270" Height="100">
 
             </Canvas>
             <Button  Click="buttonCaptcha_Click" Name="buttonCaptcha" Margin="0,10,0,0">ОК</Button>

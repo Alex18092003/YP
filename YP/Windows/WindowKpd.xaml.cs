@@ -55,14 +55,14 @@ namespace YP.Windows
                 int v = rnd.Next(3);
                 if (v == 0)
                 {
-                    int font = rnd.Next(16, 25);
+                    int font = rnd.Next(16, 20);
                     
                     TextBlock textBlock = new TextBlock()
                     {
                         Text = text[i].ToString(),
                         FontSize = font,
                         FontStyle = FontStyles.Italic,
-                        Margin = new Thickness(i * 30, rnd.Next(50), rnd.Next(50), 0),
+                        Margin = new Thickness(i * 35, rnd.Next(50), rnd.Next(50), 0),
                        
                     };
                     canv.Children.Add(textBlock);
@@ -76,7 +76,7 @@ namespace YP.Windows
                         Text = text[i].ToString(),
                         FontSize = font,
                      
-                        Margin = new Thickness(i * 30, rnd.Next(50), rnd.Next(50), 0),
+                        Margin = new Thickness(i * 35, rnd.Next(50), rnd.Next(50), 0),
                       
                     };
                     canv.Children.Add(textBlock);
@@ -91,7 +91,7 @@ namespace YP.Windows
                         FontSize = font,
                         FontWeight = FontWeights.Bold,
                         FontStyle = FontStyles.Italic,
-                        Margin = new Thickness(i*30, rnd.Next(50), rnd.Next(50), 0),
+                        Margin = new Thickness(i*35, rnd.Next(50), rnd.Next(50), 0),
                        
                     };
                     canv.Children.Add(textBlock);
@@ -104,7 +104,7 @@ namespace YP.Windows
         private void buttonCaptcha_Click(object sender, RoutedEventArgs e)
         {
             v = 1;
-            MessageBox.Show($"{text}", "Сообщение");
+            //MessageBox.Show($"{text}", "Сообщение");
             this.Close();
         }
     }

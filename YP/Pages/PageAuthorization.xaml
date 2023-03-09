@@ -29,7 +29,7 @@
 
         <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" >
             <StackPanel  Orientation="Horizontal" >
-                <TextBlock Margin="0,5,28,5">Номер</TextBlock>
+                <TextBlock Margin="0,5,25,5">Номер</TextBlock>
                 <TextBox KeyDown="textboxNomer_KeyDown" Name="textboxNomer" Width="200" Height="25" ></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
@@ -40,7 +40,7 @@
                 <TextBlock  Margin="0,5,55,5">Код</TextBlock>
                 <TextBox KeyDown="textboxKod_KeyDown"  Name="textboxKod"  IsEnabled="False" Height="25" Width="150"></TextBox>
 
-                <Button IsEnabled="False" Margin="10,0,0,0"  Name="btnRepeat" Width="25"  Height="22" Click="btnRepeat_Click">
+                <Button  Margin="10,0,0,0"  Name="btnRepeat" Width="25"  Height="22" Click="btnRepeat_Click">
                     <Button.Background>
                         <ImageBrush  ImageSource="../Resources/На авторизацию_Обновление кода.jpg"/>
                     </Button.Background>

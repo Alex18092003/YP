@@ -14,13 +14,15 @@ namespace YP
     
     public partial class Employees
     {
-        public int id_employee { get; set; }
+        public int kod_employee { get; set; }
         public string name { get; set; }
         public string surname { get; set; }
         public string patrinymic { get; set; }
         public int id_role { get; set; }
-        public int nomer { get; set; }
-        public int password { get; set; }
+        public Nullable<int> nomer { get; set; }
+        public Nullable<int> password { get; set; }
+        public string id_employees { get; set; }
+        public string photo { get; set; }
     
         public virtual Roles Roles { get; set; }
     }

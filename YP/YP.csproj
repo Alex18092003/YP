@@ -76,9 +76,6 @@
     <Compile Include="Roles.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagrams.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Windows\WindowKpd.xaml.cs">
       <DependentUpon>WindowKpd.xaml</DependentUpon>
     </Compile>

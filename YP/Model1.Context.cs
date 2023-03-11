@@ -27,6 +27,5 @@ namespace YP
     
         public virtual DbSet<Employees> Employees { get; set; }
         public virtual DbSet<Roles> Roles { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }

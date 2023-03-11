@@ -6,8 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="3fe1b449684f44a3acae2a4edebf52e5" Name="Diagram1">
         <EntityTypeShape EntityType="CRM12Model.Employees" Width="1.5" PointX="3" PointY="1" />
-        <EntityTypeShape EntityType="CRM12Model.Roles" Width="1.5" PointX="0.75" PointY="1.375" />
-        <EntityTypeShape EntityType="CRM12Model.sysdiagrams" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="CRM12Model.Roles" Width="1.5" PointX="0.75" PointY="1.625" />
         <AssociationConnector Association="CRM12Model.FK_Employees_Roles" />
       </Diagram>
     </edmx:Diagrams>

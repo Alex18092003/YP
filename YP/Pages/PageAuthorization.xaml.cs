@@ -146,7 +146,6 @@ namespace YP.Pages
                 textboxPassword.IsEnabled = false;
                 textboxNomer.IsEnabled = false;
                 textboxKod.Text = "";
-                btnRepeat.IsEnabled = true;
                 imgg.IsEnabled = true;
                 burronEntrance.IsEnabled = false;
                 
@@ -171,7 +170,6 @@ namespace YP.Pages
                     textboxKod.IsEnabled = false;
                     textboxPassword.IsEnabled = false;
                     textboxNomer.IsEnabled = false;
-                    btnRepeat.IsEnabled = false;
                     buttonCancel.IsEnabled = false;
                     burronEntrance.IsEnabled = false;
                     imgg.IsEnabled = false;
@@ -224,7 +222,6 @@ namespace YP.Pages
             {
                 MessageBox.Show("Закончились попытки", "Сообщение");
                 textboxKod.IsEnabled = false;
-                btnRepeat.IsEnabled = false;
                 buttonCancel.IsEnabled = false;
                 burronEntrance.IsEnabled = false;
                 imgg.IsEnabled = false;
@@ -273,7 +270,7 @@ namespace YP.Pages
             {//uyv=X)%k
                 MessageBox.Show("Закончились попытки", "Сообщение");
                 textboxKod.IsEnabled = false;
-                btnRepeat.IsEnabled = false;
+          
                 buttonCancel.IsEnabled = false;
                 burronEntrance.IsEnabled = false;
             }

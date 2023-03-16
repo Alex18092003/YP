@@ -147,6 +147,7 @@ namespace YP.Pages
                 textboxNomer.IsEnabled = false;
                 textboxKod.Text = "";
                 btnRepeat.IsEnabled = true;
+                imgg.IsEnabled = true;
                 burronEntrance.IsEnabled = false;
                 
             } 
@@ -173,6 +174,7 @@ namespace YP.Pages
                     btnRepeat.IsEnabled = false;
                     buttonCancel.IsEnabled = false;
                     burronEntrance.IsEnabled = false;
+                    imgg.IsEnabled = false;
                     dispatcherTimer.Stop();
                     TextClue.Text = "";
                     textboxKod.Text = "";
@@ -195,6 +197,7 @@ namespace YP.Pages
             textboxKod.IsEnabled = false;
             textboxPassword.IsEnabled = false;
             textboxNomer.IsEnabled = true;
+            imgg.IsEnabled = false;
             dispatcherTimer.Stop();
             TextClue.Text = "";
         }
@@ -224,6 +227,7 @@ namespace YP.Pages
                 btnRepeat.IsEnabled = false;
                 buttonCancel.IsEnabled = false;
                 burronEntrance.IsEnabled = false;
+                imgg.IsEnabled = false;
             }
         }
 
@@ -237,6 +241,7 @@ namespace YP.Pages
                 textboxKod.IsEnabled = false;
                 textboxPassword.IsEnabled = false;
                 textboxNomer.IsEnabled = false;
+                imgg.IsEnabled = false;
                 dispatcherTimer.Stop();
                 TextClue.Text = "";
                 textboxKod.Text = "";
@@ -246,6 +251,31 @@ namespace YP.Pages
                 textboxPassword.IsEnabled = false;
                 textboxNomer.IsEnabled = false;
                 MessageBox.Show("Неверный код", "Сообщение");
+            }
+        }
+
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (v2 != 1)
+            {
+                Windows.WindowKpd windowKpd = new Windows.WindowKpd();
+                windowKpd.ShowDialog();
+                v = windowKpd.v;
+                //kk = employees.id_role;
+                kod = windowKpd.text;
+                Classes.ClassFrame.frame.Navigate(new PageAuthorization(kk2, kod, v2));
+
+                dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
+                dispatcherTimer.Tick += new EventHandler(Back);
+                dispatcherTimer.Start();
+            }
+            else
+            {//uyv=X)%k
+                MessageBox.Show("Закончились попытки", "Сообщение");
+                textboxKod.IsEnabled = false;
+                btnRepeat.IsEnabled = false;
+                buttonCancel.IsEnabled = false;
+                burronEntrance.IsEnabled = false;
             }
         }
     } 

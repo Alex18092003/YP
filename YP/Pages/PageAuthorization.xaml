@@ -40,11 +40,10 @@
                 <TextBlock  Margin="0,5,55,5">Код</TextBlock>
                 <TextBox KeyDown="textboxKod_KeyDown"  Name="textboxKod"  IsEnabled="False" Height="25" Width="150"></TextBox>
 
-                <Button  Margin="10,0,0,0"  Name="btnRepeat" Width="25"  Height="22" Click="btnRepeat_Click">
-                    <Button.Background>
-                        <ImageBrush  ImageSource="../Resources/На авторизацию_Обновление кода.jpg"/>
-                    </Button.Background>
-                </Button>
+                <Image  Margin="10,0,0,0" Name="imgg" MouseDown="Image_MouseDown" IsEnabled="False" Width="30"  Height="20" Source="../Resources/На авторизацию_Обновление кода.jpg">
+                    
+                </Image>
+                
             </StackPanel>
         </StackPanel>
 
